@@ -1,3 +1,10 @@
+/*
+ * @Author: Monve
+ * @Date: 2021-11-25 18:09:03
+ * @LastEditors: Monve
+ * @LastEditTime: 2022-02-09 14:19:14
+ * @FilePath: /version-compare/src/version-compare.ts
+ */
 export type Version = string | number
 export enum VersionIs {
   LessThan = -1,
@@ -26,4 +33,27 @@ export const versionCompare = (
     if (isNaN(cn) && !isNaN(on)) return VersionIs.LessThan
   }
   return VersionIs.EqualTo
+}
+
+export class Ver {
+  public str: string;
+
+  constructor(version: string) {
+    this.str = version
+  }
+
+  public isGreaterThan = (other_version: string) =>
+    versionCompare(this.str, other_version) === VersionIs.GreaterThan
+      ? true : false
+
+  public isLessThan = (other_version: string) => {
+    versionCompare(this.str, other_version) === VersionIs.LessThan
+      ? true : false
+  }
+
+  public isEqualTo = (other_version: string) => {
+    versionCompare(this.str, other_version) === VersionIs.EqualTo
+      ? true : false
+  }
+
 }
