@@ -46,14 +46,12 @@ export class Ver {
     versionCompare(this.str, other_version) === VersionIs.GreaterThan
       ? true : false
 
-  public isLessThan = (other_version: string) => {
+  public isLessThan = (other_version: string) =>
     versionCompare(this.str, other_version) === VersionIs.LessThan
       ? true : false
-  }
 
-  public isEqualTo = (other_version: string) => {
+  public isEqualTo = (other_version: string) =>
     versionCompare(this.str, other_version) === VersionIs.EqualTo
       ? true : false
-  }
 
 }
