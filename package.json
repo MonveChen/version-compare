@@ -1,6 +1,6 @@
 {
-  "name": "@monvechen/version-compare",
-  "version": "1.0.4",
+  "name": "version-compare-monve",
+  "version": "1.0.5",
   "description": "for compare version",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -14,7 +14,8 @@
     "build": "rm -rf ./dist && ./node_modules/.bin/tsc",
     "prepare": "husky install",
     "link": "npm run build && npm link",
-    "publish": "npm run build && npm publish --access public"
+    "publish_to_npm": "npm run build && npm publish --access=public && npm run sync_taobao",
+    "sync_taobao": "cnpm sync $npm_package_name && open https://npmmirror.com/sync/$npm_package_name"
   },
   "repository": {
     "type": "git",
